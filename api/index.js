@@ -42,11 +42,11 @@ app.post('/api/addUrl', async (req, reply) => {
   return reply.status(200).type('application/json').send({
     code: 200,
     msg: 'success',
-    url: `/u/${result.data.short}`
+    url: `/${result.data.short}`
   })
 })
 
-app.get('/u/:hash', async (req, reply) => {
+app.get('/:hash', async (req, reply) => {
   if (req.params?.hash) {
     const result = await linkService.getUrl(req.params.hash)
     if (!result || !result.data?.length || result.error) {
