@@ -15,7 +15,7 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SER
 function generatorHash(url) {
   var md5 = crypto.createHash('md5');
   const hex = md5.update(url).digest('hex')
-  return hex.slice(8, 24)
+  return hex.slice(8, 14)
 }
 
 export function getUrl(short) {
