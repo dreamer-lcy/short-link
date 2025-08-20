@@ -46,7 +46,7 @@ app.post('/api/addUrl', async (req, reply) => {
   })
 })
 
-app.get('/:hash', async (req, reply) => {
+app.get('hash', async (req, reply) => {
   if (req.params?.hash) {
     const result = await linkService.getUrl(req.params.hash)
     if (!result || !result.data?.length || result.error) {
